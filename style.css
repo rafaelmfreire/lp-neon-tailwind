@@ -39,3 +39,6 @@
 .swiper-pagination-bullet-active {
     @apply opacity-100 w-[1rem];
 }
+.swiper-slide {
+    height: auto;
+}
