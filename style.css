@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-primary,
+    .btn-secondary,
+    .btn-secondary-white {
+        @apply font-poppins text-[1rem] font-medium inline-block leading-[3rem] px-7 rounded-full;
+    }
+
+    .btn-primary {
+        @apply text-[#855B35] bg-brand-yellow hover:bg-[#FFDC5C] transition-colors duration-300;
+    }
+    
+    .s-hero {
+        background-image: url(/img/bg-hero-mobile.svg);
+    }
+    @media(min-width: 768px){
+        .s-hero {
+            background-image: url(/img/bg-hero.svg);
+        }
+    }
+
+    .s-card-pejota {
+        background-image: url(/img/bg-neon-pj-mobile.svg);
+    }
+}
+
+@layer utilities {
+    .grid-container {
+        @apply px-5;
+    }
+}
+.swiper-pagination-bullet {
+    @apply bg-brand-yellow opacity-30 rounded-xl transition-all duration-300 block relative;
+}
+
+.swiper-pagination-bullet-active {
+    @apply opacity-100 w-[1rem];
+}

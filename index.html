@@ -6,9 +6,213 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <title>Banco Neon</title>
   </head>
-  <body class="font-inter">
+  <body class="font-inter overflow-x-hidden">
+    <header class="absolute top-0 left-0 w-full h-[4.5rem] flex items-center border-b-2 border-white/20">
+      <div class="grid-container w-full flex items-center justify-between">
+        <a href="#">
+          <img src="./img/logo-neon-white.svg" class="h-6 w-auto" alt="Logo Banco Neon">
+        </a>
+        <button>
+          <img src="/img/btn-menu-mobile.svg" alt="Menu">
+        </button>
+      </div>
+    </header>
+    
+      <!-- HERO -->
+      <section class="s-hero w-full h-[46.25rem] pt-[7.75rem] bg-cover bg-center">
+        <div class="grid-container flex flex-col items-center">
+          <h3 class="font-poppins font-semibold text-title-16 text-white/80 text-center mb-4">Abra sua conta, é só baixar o app!</h3>
+          <h1 class="font-poppins font-semibold text-title-32 text-white text-center mb-9">A conta digital certa pra cuidar bem do seu dinheiro</h1>
+          <a href="#" class="btn-primary">Abra sua conta digital</a>
+
+          <ul class="mt-9 space-y-4">
+            <li class="flex items-center space-x-5">
+              <div class="w-5 h-auto flex justify-center">
+                <img src="/img/icon-card.svg" class="" alt="Ícone de Cartão de Crédito">
+              </div>
+              <span class="text-white text-paragraph-18">Cartão sem anuidade</span>
+            </li>
+            <li class="flex items-center space-x-5">
+              <div class="w-5 h-auto flex justify-center">
+                <img src="/img/icon-free.svg" class="" alt="Ícone de Taxa Zero">
+              </div>
+              <span class="text-white text-paragraph-18">Conta digital 100% grátis</span>
+            </li>
+            <li class="flex items-center space-x-5">
+              <div class="w-5 h-auto flex justify-center">
+                <img src="/img/icon-money.svg" class="" alt="Ícone de Cifrão">
+              </div>
+              <span class="text-white text-paragraph-18">Seu dinheiro rendendo mais</span>
+            </li>
+          </ul>
+        </div>
+        <div class="relative h-[271px] max-w-[317px] w-full mx-auto mt-10">
+          <img src="/img/circle-mobile.svg" class="absolute left-[38px] max-w-[267px]" alt="Círculo decorativo">
+          <img src="/img/card-back-mobile.png" class="absolute left-[128px] top-[92px] max-w-[209px]" alt="Verso do cartão de crédito Neon">
+          <img src="/img/card-front-mobile.png" class="absolute top-[29px] max-w-[210px]" alt="Frente do cartão de crédito Neon">
+        </div>
+      </section>
+
+      <!-- CONTA DIGITAL -->
+      <section class="mt-[5.375rem]">
+        <div class="grid-container">
+          <h2 class="font-poppins font-semibold text-title-28 text-gray-600 text-center">Resolva sua vida direto pelo app Neon!</h2>
+          <ul class="mt-2">
+            <li class="flex items-center space-x-6 border-b border-gray-100/90 py-7">
+              <div class="flex items-start space-x-6">
+                <img src="/img/icon-free-card.svg" alt="Ícone de cartão de crédito sem anuidade">
+                <div class="space-y-2">
+                  <h3 class="font-poppins font-medium text-title-20 text-gray-400">Cartão de crédito sem anuidade</h3>
+                  <p class="text-paragraph-14 text-gray-300">Conta digital com cartão de crédito sem anuidade e sem complicação</p>
+                </div>
+              </div>
+              <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
+            </li>
+            <li class="flex items-center space-x-6 border-b border-gray-100/90 py-7">
+              <div class="flex items-start space-x-6">
+                <img src="/img/icon-no-taxes.svg" alt="Ícone de cartão de crédito sem anuidade">
+                <div class="space-y-2">
+                  <h3 class="font-poppins font-medium text-title-20 text-gray-400">Sem taxas</h3>
+                  <p class="text-paragraph-14 text-gray-300">Transferências, boletos de depósito e outros serviços gratuitos</p>
+                </div>
+              </div>
+              <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
+            </li>
+            <li class="flex items-center space-x-6 border-b border-gray-100/90 py-7">
+              <div class="flex items-start space-x-6">
+                <img src="/img/icon-invesments.svg" alt="Ícone de cartão de crédito sem anuidade">
+                <div class="space-y-2">
+                  <h3 class="font-poppins font-medium text-title-20 text-gray-400">Mais investimentos</h3>
+                  <p class="text-paragraph-14 text-gray-300">Rendem mais que a poupança e você resgata quando quiser</p>
+                </div>
+              </div>
+              <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
+            </li>
+          </ul>
+          <div class="flex justify-center mt-10">
+            <a href="#" class="font-poppins text-title-18 font-medium text-brand-blue inline-block text-center after:content-[''] relative after:absolute after:bottom-0 after:-right-5 after:w-[10px] after:h-[3px] after:bg-brand-yellow">Conheça outros produtos</a>
+          </div>
+        </div>
+
+        <!-- CARD PEJOTA -->
+        <div class="relative">
+          <div class="grid-container">
+            <div class="s-card-pejota bg-cover bg-center relative w-[336px] h-[470px] mt-8 pt-12 rounded-lg">
+              <h2 class="font-poppins font-semibold text-title-28 text-white text-center mb-4">Neon Pejota</h2>
+              <h3 class="font-poppins font-semibold text-title-20 text-white text-center mb-2 px-7">Contas digitais PJ gratuitas para decolar seu negócio!</h3>
+              <p class="text-paragraph-16 text-white text-center mb-8 px-10">As melhores contas para fazer pagamentos, compras e receber dos seus clientes.</p>
+              <div class="space-x-4 flex items-center justify-center">
+                <a href="#" class="btn-primary font-semibold">Sou MEI</a>
+                <a href="#" class="btn-primary font-semibold">Sou PJ</a>
+              </div>
+            </div>
+          </div>
+          <img src="/img/card-pejota.png" class="absolute left-4 bottom-[-111px] h-[267px] w-[344px]" alt="Cartão de crédito pejota">
+        </div>
+
+        <div class="flex flex-col items-center mt-[117px] relative after:content-[''] after:w-full after:h-[214px] after:absolute after:left-0 after:bottom-0 after:bg-gradient-to-t after:from-[#F7F7FA] after:to-transparent after:-z-10">
+          <img src="/img/icon-neon.svg" alt="Ícone do app Neon">
+          <h3 class="font-poppins font-medium text-title-24 text-center text-gray-600">Baixe nosso app</h3>
+          <p class="text-paragraph-18 text-center text-gray-500 mb-11 px-12">Que tal abrir uma conta digital para ver como a gente faz a sua vida muito mais simples?</p>
+          <img src="/img/apple-store.svg" class="mb-3" alt="Botão da Apple Store">
+          <img src="/img/google-play.svg" alt="Botão da Google Play">
+          <div class="h-[397px] overflow-hidden">
+            <img src="/img/mockup-menu-app.png" class="max-w-full h-[500px]" alt="Celular exibindo o menu do app">
+          </div>
+        </div>
+      </section>
+
+      <!-- DEPOIMENTOS -->
+      <section class="mt-[4.75rem]">
+        <h2 class="font-poppins text-title-28 font-semibold text-center"><span class="text-title-24 text-gray-200 block mb-3">Prático, fácil, moderno</span> Você resolve tudo sem estresse 😊</h2>
+        <div class="swiper-pagination relative flex items-center justify-center my-8"></div>
+
+        <div class="swiper mySwiper overflow-hidden grid-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="w-full max-w-[15.5rem] bg-gray-50 p-8 rounded-lg">
+                <div class="flex items-center justify-between mb-5">
+                  <strong class="font-poppins font-semibold text-title-18 text-gray-500">@marciogurka</strong>
+                  <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                </div>
+                <p class="text-paragraph-18 text-gray-400">Valeu @banconeon! Linda embalagem e o cartão tbm é lindo! Muito amor por esse banco #bancoNeon</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full max-w-[15.5rem] bg-gray-50 p-8 rounded-lg">
+                <div class="flex items-center justify-between mb-5">
+                  <strong class="font-poppins font-semibold text-title-18 text-gray-500">@marciogurka</strong>
+                  <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                </div>
+                <p class="text-paragraph-18 text-gray-400">Valeu @banconeon! Linda embalagem e o cartão tbm é lindo! Muito amor por esse banco #bancoNeon</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full max-w-[15.5rem] bg-gray-50 p-8 rounded-lg">
+                <div class="flex items-center justify-between mb-5">
+                  <strong class="font-poppins font-semibold text-title-18 text-gray-500">@marciogurka</strong>
+                  <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                </div>
+                <p class="text-paragraph-18 text-gray-400">Valeu @banconeon! Linda embalagem e o cartão tbm é lindo! Muito amor por esse banco #bancoNeon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTA DIGITAL -->
+      <section class="mt-14">
+        <div class="grid-container flex flex-col items-center">
+          <h2 class="font-poppins font-semibold text-title-28 text-gray-600 text-center"><span class="block text-title-24 text-gray-200 mb-3">Aproveite</span>Domine o seu dinheiro com uma conta 100% digital</h2>
+          <ul class="my-12 space-y-8">
+            <li class="flex flex-col items-center">
+              <div class="w-12 h-12 mb-4 rounded-lg flex items-center justify-center bg-brand-green-light">
+                <img src="/img/icon-card.svg" class="max-w-[21px] h-auto" alt="Ícone de cartão de crédito">
+              </div>
+              <h4 class="font-poppins font-medium text-title-20 text-gray-400 text-center mb-1 max-w-[295px]">Cartão visa internacional</h4>
+              <p class="text-paragraph-14 text-gray-300 text-center px-20">Tenha facilidades e benefícios para o seu dia a dia.</p>
+            </li>
+            <li class="flex flex-col items-center">
+              <div class="w-12 h-12 mb-4 rounded-lg flex items-center justify-center bg-brand-green-light">
+                <img src="/img/icon-free.svg" class="max-w-[21px] h-auto" alt="Ícone de cartão de crédito">
+              </div>
+              <h4 class="font-poppins font-medium text-title-20 text-gray-400 text-center mb-1 max-w-[295px]">Zero mensalidade e anuidade</h4>
+              <p class="text-paragraph-14 text-gray-300 text-center px-20">Não gaste grana pagando taxas desnecessárias.</p>
+            </li>
+            <li class="flex flex-col items-center">
+              <div class="w-12 h-12 mb-4 rounded-lg flex items-center justify-center bg-brand-green-light">
+                <img src="/img/icon-money.svg" class="max-w-[21px] h-auto" alt="Ícone de cartão de crédito">
+              </div>
+              <h4 class="font-poppins font-medium text-title-20 text-gray-400 text-center mb-1 max-w-[295px]">Investimento que rende mais que a poupança</h4>
+              <p class="text-paragraph-14 text-gray-300 text-center px-20">Invista o seu dinheiro de maneira mais rentável.</p>
+            </li>
+          </ul>
+          <a href="#" class="btn-primary">Abra sua conta digital</a>
+        </div>
+      </section>
     <script type="module" src="/main.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1.3,
+        spaceBetween: 16,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          720: {
+            slidesPerView: 2.3,
+            spaceBetween: 15,
+          },
+          991: {
+            slidesPerView: 3
+          }
+        }
+      });
+    </script>
   </body>
 </html>
