@@ -2,6 +2,7 @@ module.exports = {
   content: ["./index.html"],
   theme: {
     screens: {
+      'mini-tablet': '610px',
       tablet: "768px",
       desktop: "1440px",
       full: "1920px",
@@ -25,6 +26,10 @@ module.exports = {
         100: "#E1E0E7",
         50: "#F1F0F5",
       },
+      gradient: {
+        top: 'rgba(53, 203, 226, 0.4) 0%',
+        bottom: 'rgba(53, 202, 226, 0) 100%',
+      }
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
@@ -32,11 +37,13 @@ module.exports = {
     },
     fontSize: {
       "title-64": ["4rem", { lineHeight: "112%", letterSpacing: "-1px" }],
+      "title-48": ["3rem", { lineHeight: "112%", letterSpacing: "-0.5px" }],
       "title-40": ["2.5rem", { lineHeight: "112%", letterSpacing: "-1px" }],
+      "title-36": ["2.25rem", { lineHeight: "112%", letterSpacing: "-1px" }],
       "title-32": ["2rem", { lineHeight: "112%", letterSpacing: "-0.5px" }],
       "title-28": ["1.75rem", { lineHeight: "112%", letterSpacing: "-1px" }],
       "title-24": ["1.5rem", { lineHeight: "150%", letterSpacing: "-0.5px" }],
-      "title-20": ["1.25rem", { lineHeight: "112%", letterSpacing: "-0.5px" }],
+      "title-20": ["1.25rem", { lineHeight: "120%", letterSpacing: "-0.5px" }],
       "title-18": ["1.125rem", { lineHeight: "112%", letterSpacing: "-0.5px" }],
       "title-16": ["1rem", { lineHeight: "120%", letterSpacing: "-0.5px" }],
       "paragraph-18": ["1.125rem", { lineHeight: "150%", letterSpacing: "0px" }],
