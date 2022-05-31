@@ -44,7 +44,11 @@ module.exports = {
       "paragraph-14": ["0.875rem", { lineHeight: "150%", letterSpacing: "0px" }],
     },
 
-    extend: {},
+    extend: {
+      spacing: {
+        '13': '3.25rem'
+      }
+    },
   },
   plugins: [],
 };
