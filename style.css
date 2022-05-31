@@ -12,13 +12,17 @@
     .btn-primary {
         @apply text-[#855B35] bg-brand-yellow hover:bg-[#FFDC5C] transition-colors duration-300;
     }
+
+    .btn-secondary {
+        @apply text-white border border-white bg-transparent hover:bg-white hover:text-brand-green-light transition-colors duration-300;
+    }
     
     .s-hero {
         background-image: url(/img/bg-hero-mobile.svg);
     }
     @media(min-width: 768px){
         .s-hero {
-            background-image: url(/img/bg-hero.svg);
+            background-image: url(/img/bg-hero-tablet.svg);
         }
     }
 
