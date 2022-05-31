@@ -25,6 +25,13 @@
     .s-card-pejota {
         background-image: url(/img/bg-neon-pj-mobile.svg);
     }
+
+    .bg-conta-digital {
+        background-image: url(/img/circle-neon-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
 }
 
 @layer utilities {

@@ -61,7 +61,7 @@
       <div class="grid-container">
         <h2 class="font-poppins font-semibold text-title-28 text-gray-600 text-center">Resolva sua vida direto pelo app Neon!</h2>
         <ul class="mt-2">
-          <li class="flex items-center space-x-6 border-b border-gray-100/90 py-7">
+          <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7">
             <div class="flex items-start space-x-6">
               <img src="/img/icon-free-card.svg" alt="Ícone de cartão de crédito sem anuidade">
               <div class="space-y-2">
@@ -71,7 +71,7 @@
             </div>
             <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
           </li>
-          <li class="flex items-center space-x-6 border-b border-gray-100/90 py-7">
+          <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7">
             <div class="flex items-start space-x-6">
               <img src="/img/icon-no-taxes.svg" alt="Ícone de cartão de crédito sem anuidade">
               <div class="space-y-2">
@@ -81,7 +81,7 @@
             </div>
             <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
           </li>
-          <li class="flex items-center space-x-6 border-b border-gray-100/90 py-7">
+          <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7">
             <div class="flex items-start space-x-6">
               <img src="/img/icon-invesments.svg" alt="Ícone de cartão de crédito sem anuidade">
               <div class="space-y-2">
@@ -100,7 +100,7 @@
       <!-- CARD PEJOTA -->
       <div class="relative">
         <div class="grid-container">
-          <div class="s-card-pejota bg-cover bg-center relative w-[336px] h-[470px] mt-8 pt-12 rounded-lg">
+          <div class="s-card-pejota bg-cover bg-center relative w-auto h-[470px] mt-8 pt-12 rounded-lg">
             <h2 class="font-poppins font-semibold text-title-28 text-white text-center mb-4">Neon Pejota</h2>
             <h3 class="font-poppins font-semibold text-title-20 text-white text-center mb-2 px-7">Contas digitais PJ gratuitas para decolar seu negócio!</h3>
             <p class="text-paragraph-16 text-white text-center mb-8 px-10">As melhores contas para fazer pagamentos, compras e receber dos seus clientes.</p>
@@ -108,9 +108,9 @@
               <a href="#" class="btn-primary font-semibold">Sou MEI</a>
               <a href="#" class="btn-primary font-semibold">Sou PJ</a>
             </div>
+            <img src="/img/card-pejota.png" class="mt-2 mx-auto h-[267px] w-[344px]" alt="Cartão de crédito pejota">
           </div>
         </div>
-        <img src="/img/card-pejota.png" class="absolute left-4 bottom-[-111px] h-[267px] w-[344px]" alt="Cartão de crédito pejota">
       </div>
 
       <div class="flex flex-col items-center mt-[117px] relative after:content-[''] after:w-full after:h-[214px] after:absolute after:left-0 after:bottom-0 after:bg-gradient-to-t after:from-[#F7F7FA] after:to-transparent after:-z-10">
@@ -133,7 +133,7 @@
       <div class="swiper mySwiper overflow-hidden grid-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="w-full max-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
+            <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@marciogurka</strong>
                 <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
@@ -142,7 +142,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="w-full max-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
+            <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@kleriene18</strong>
                 <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
@@ -151,7 +151,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="w-full max-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
+            <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@mzltweet</strong>
                 <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
@@ -192,7 +192,13 @@
         </ul>
         <a href="#" class="btn-primary">Abra sua conta digital</a>
 
+        <div class="w-full mx-auto mt-11">
           <div class="relative w-full max-w-[582px] mx-auto flex flex-col items-center justify-center bg-conta-digital">
+            <div class="flex gap-4">
+              <img class="w-[48%] max-w-[225px] mt-20 mb-20 h-auto" src="/img/mockup-receipt.png" alt="Celular exibindo um comprovante">
+              <img class="w-[48%] max-w-[225px] mb-40 h-auto" src="/img/mockup-signup.png" alt="Celular exibindo a tela de cadastro">
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -270,7 +276,7 @@
         <!-- MENSAGEM -->
         <div class="flex flex-col items-center space-y-4 mt-12 border-b-4 border-brand-yellow pb-5">
           <p class="text-center">😀</p>
-          <p class="text-paragraph-14 text-white/80 text-center max-w-[257px]">Oi! Leu até aqui? Você se preocupa com os mínimos detalhes, mesmo. A gente também. Por isso o time Neon está sempre trabalhando para fazer a conta digital perfeita para você ; )</p>
+          <p class="text-paragraph-14 text-white/80 text-center px-5">Oi! Leu até aqui? Você se preocupa com os mínimos detalhes, mesmo. A gente também. Por isso o time Neon está sempre trabalhando para fazer a conta digital perfeita para você ; )</p>
         </div>
       </div>
     </footer>
