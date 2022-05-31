@@ -10,56 +10,62 @@
     <title>Banco Neon</title>
   </head>
   <body class="font-inter overflow-x-hidden">
-    <header class="absolute top-0 left-0 w-full h-[4.5rem] flex items-center border-b-2 border-white/20">
+    <header class="absolute top-0 left-0 w-full h-[4.5rem] tablet:h-[5.5rem] flex items-center border-b-2 border-white/20">
       <div class="grid-container w-full flex items-center justify-between">
         <a href="#">
           <img src="./img/logo-neon-white.svg" class="h-6 w-auto" alt="Logo Banco Neon">
         </a>
-        <button>
-          <img src="/img/btn-menu-mobile.svg" alt="Menu">
-        </button>
+        <div class="flex items-center space-x-10">
+          <a class="hidden tablet:block btn-secondary" href="">Abra sua conta digital</a>
+          <button>
+            <img src="/img/btn-menu-mobile.svg" alt="Menu">
+          </button>
+        </div>
       </div>
     </header>
     
     <!-- HERO -->
-    <section class="s-hero w-full h-[46.25rem] pt-[7.75rem] bg-cover bg-center">
+    <section class="s-hero w-full h-[46.25rem] tablet:h-[55rem] pt-[7.75rem] bg-cover bg-center">
       <div class="grid-container flex flex-col items-center">
-        <h3 class="font-poppins font-semibold text-title-16 text-white/80 text-center mb-4">Abra sua conta, é só baixar o app!</h3>
-        <h1 class="font-poppins font-semibold text-title-32 text-white text-center mb-9">A conta digital certa pra cuidar bem do seu dinheiro</h1>
+        <h3 class="font-poppins font-semibold text-title-16 mini-tablet:text-title-18 text-white/80 text-center mb-4 tablet:mb-6">Abra sua conta, é só baixar o app!</h3>
+        <h1 class="font-poppins font-semibold text-title-32 mini-tablet:text-title-40 tablet:text-title-48 text-white text-center mb-9 tablet:mb-6">A conta digital certa pra cuidar bem do seu dinheiro</h1>
         <a href="#" class="btn-primary">Abra sua conta digital</a>
 
-        <ul class="mt-9 space-y-4">
-          <li class="flex items-center space-x-5">
-            <div class="w-5 h-auto flex justify-center">
+        <ul class="mt-9 space-y-4 mini-tablet:space-y-0 mini-tablet:flex items-start mini-tablet:justify-between mini-tablet:w-full mini-tablet:max-w-[588px]">
+          <li class="flex items-center space-x-5 mini-tablet:space-x-3">
+            <div class="w-5 h-auto flex mini-tablet:items-center justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
               <img src="/img/icon-card.svg" class="" alt="Ícone de Cartão de Crédito">
             </div>
-            <span class="text-white text-paragraph-18">Cartão sem anuidade</span>
+            <span class="text-white text-paragraph-18 mini-tablet:text-paragraph-16 mini-tablet:max-w-[116px]">Cartão sem anuidade</span>
           </li>
-          <li class="flex items-center space-x-5">
-            <div class="w-5 h-auto flex justify-center">
+          <li class="flex items-center space-x-5 mini-tablet:space-x-3">
+            <div class="w-5 h-auto flex mini-tablet:items-center justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
               <img src="/img/icon-free.svg" class="" alt="Ícone de Taxa Zero">
             </div>
-            <span class="text-white text-paragraph-18">Conta digital 100% grátis</span>
+            <span class="text-white text-paragraph-18 mini-tablet:text-paragraph-16 mini-tablet:max-w-[116px]">Conta digital 100% grátis</span>
           </li>
-          <li class="flex items-center space-x-5">
-            <div class="w-5 h-auto flex justify-center">
+          <li class="flex items-center space-x-5 mini-tablet:space-x-3">
+            <div class="w-5 h-auto flex mini-tablet:items-center justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
               <img src="/img/icon-money.svg" class="" alt="Ícone de Cifrão">
             </div>
-            <span class="text-white text-paragraph-18">Seu dinheiro rendendo mais</span>
+            <span class="text-white text-paragraph-18 mini-tablet:text-paragraph-16 mini-tablet:max-w-[116px]">Seu dinheiro rendendo mais</span>
           </li>
         </ul>
       </div>
-      <div class="relative h-[271px] max-w-[317px] w-full mx-auto mt-10">
-        <img src="/img/circle-mobile.svg" class="absolute left-[38px] max-w-[267px]" alt="Círculo decorativo">
-        <img src="/img/card-back-mobile.png" class="absolute left-[128px] top-[92px] max-w-[209px]" alt="Verso do cartão de crédito Neon">
-        <img src="/img/card-front-mobile.png" class="absolute top-[29px] max-w-[210px]" alt="Frente do cartão de crédito Neon">
+      <div>
+        <h2 class="hidden mini-tablet:block font-poppins font-semibold text-title-40 text-white/40 text-center mt-12 mb-4">Banco 100% digital</h2>
+        <div class="relative h-[271px] tablet:h-[424px] max-w-[317px] tablet:max-w-[511px] w-full mx-auto mt-10">
+          <img src="/img/circle.svg" class="absolute left-[38px] tablet:left-[67px] max-w-[267px] tablet:max-w-[429px]" alt="Círculo decorativo">
+          <img src="/img/card-back.png" class="absolute left-[128px] top-[92px] tablet:top-[137px] tablet:left-auto tablet:-right-[30px] max-w-[209px] tablet:max-w-[334px]" alt="Verso do cartão de crédito Neon">
+          <img src="/img/card-front.png" class="absolute top-[29px] tablet:top-[35px] w-full max-w-[210px] tablet:max-w-[340px]" alt="Frente do cartão de crédito Neon">
+        </div>
       </div>
     </section>
 
     <!-- CONTA DIGITAL -->
-    <section class="mt-[5.375rem]">
+    <section class="mt-[86px] tablet:mt-[153px]">
       <div class="grid-container">
-        <h2 class="font-poppins font-semibold text-title-28 text-gray-600 text-center">Resolva sua vida direto pelo app Neon!</h2>
+        <h2 class="font-poppins font-semibold text-title-28 mini-tablet:text-title-36 max-w-[316px] mini-tablet:max-w-[424px] text-gray-600 text-center mx-auto">Resolva sua vida direto pelo app Neon!</h2>
         <ul class="mt-2">
           <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7">
             <div class="flex items-start space-x-6">
@@ -98,29 +104,33 @@
       </div>
 
       <!-- CARD PEJOTA -->
-      <div class="relative">
+      <div class="relative tablet:overflow-x-hidden">
         <div class="grid-container">
-          <div class="s-card-pejota bg-cover bg-center relative w-auto h-[470px] mt-8 pt-12 rounded-lg">
-            <h2 class="font-poppins font-semibold text-title-28 text-white text-center mb-4">Neon Pejota</h2>
-            <h3 class="font-poppins font-semibold text-title-20 text-white text-center mb-2 px-7">Contas digitais PJ gratuitas para decolar seu negócio!</h3>
-            <p class="text-paragraph-16 text-white text-center mb-8 px-10">As melhores contas para fazer pagamentos, compras e receber dos seus clientes.</p>
-            <div class="space-x-4 flex items-center justify-center">
-              <a href="#" class="btn-primary font-semibold">Sou MEI</a>
-              <a href="#" class="btn-primary font-semibold">Sou PJ</a>
+          <div class="s-card-pejota bg-cover bg-center relative w-auto tablet:w-[688px] h-[470px] tablet:h-auto tablet:mx-auto mt-8 tablet:mt-14 pt-12 tablet:pt-14 rounded-lg tablet:flex">
+            <div class="tablet:pl-12 tablet:w-[326px] tablet:mb-14">
+              <h2 class="font-poppins font-semibold text-title-28 text-white text-center tablet:text-left mb-4">Neon Pejota</h2>
+              <h3 class="font-poppins font-semibold text-title-20 text-white text-center tablet:text-left mx-auto mb-2 px-7 mini-tablet:px-28 tablet:px-0">Contas digitais PJ gratuitas para decolar seu negócio!</h3>
+              <p class="text-paragraph-16 text-white text-center tablet:text-left mx-auto mb-8 px-10 mini-tablet:px-28 tablet:px-0">As melhores contas para fazer pagamentos, compras e receber dos seus clientes.</p>
+              <div class="space-x-4 flex items-center justify-center tablet:justify-start">
+                <a href="#" class="btn-primary font-semibold">Sou MEI</a>
+                <a href="#" class="btn-primary font-semibold">Sou PJ</a>
+              </div>
             </div>
-            <img src="/img/card-pejota.png" class="mt-2 mx-auto h-[267px] w-[344px]" alt="Cartão de crédito pejota">
+            <img src="/img/card-pejota.png" class="mt-2 mx-auto tablet:absolute tablet:-right-[70px] tablet:mx-0 w-[344px] tablet:w-[365px]" alt="Cartão de crédito pejota">
           </div>
         </div>
       </div>
 
-      <div class="flex flex-col items-center mt-[117px] relative after:content-[''] after:w-full after:h-[214px] after:absolute after:left-0 after:bottom-0 after:bg-gradient-to-t after:from-[#F7F7FA] after:to-transparent after:-z-10">
-        <img src="/img/icon-neon.svg" alt="Ícone do app Neon">
-        <h3 class="font-poppins font-medium text-title-24 text-center text-gray-600">Baixe nosso app</h3>
-        <p class="text-paragraph-18 text-center text-gray-500 mb-11 px-12">Que tal abrir uma conta digital para ver como a gente faz a sua vida muito mais simples?</p>
-        <img src="/img/apple-store.svg" class="mb-3" alt="Botão da Apple Store">
-        <img src="/img/google-play.svg" alt="Botão da Google Play">
-        <div class="h-[397px] overflow-hidden">
-          <img src="/img/mockup-menu-app.png" class="max-w-full h-[500px]" alt="Celular exibindo o menu do app">
+      <div class="flex flex-col tablet:flex-row-reverse items-center tablet:justify-center mt-[117px] tablet:mt-[93px] relative tablet:after:hidden after:content-[''] after:w-full after:h-[214px] after:absolute after:left-0 after:bottom-0 after:bg-gradient-to-t after:from-[#F7F7FA] after:to-transparent after:-z-10">
+        <div class="flex flex-col flex-grow items-center w-full max-w-[270px]">
+          <img src="/img/icon-neon.svg" alt="Ícone do app Neon">
+          <h3 class="font-poppins font-medium text-title-24 text-center text-gray-600">Baixe nosso app</h3>
+          <p class="text-paragraph-18 text-center text-gray-500 mb-11">Que tal abrir uma conta digital para ver como a gente faz a sua vida muito mais simples?</p>
+          <img src="/img/apple-store.svg" class="mb-3" alt="Botão da Apple Store">
+          <img src="/img/google-play.svg" alt="Botão da Google Play">
+        </div>
+        <div class="h-[397px] flex-grow-0 tablet:h-full overflow-hidden">
+          <img src="/img/mockup-menu-app.png" class="max-w-full h-[500px] tablet:h-[580px]" alt="Celular exibindo o menu do app">
         </div>
       </div>
     </section>
