@@ -36,11 +36,15 @@
         background-size: contain;
         background-position: bottom;
     }
+
+    .icon-dots:before {
+        background: url('/img/dots.svg') no-repeat center;
+    }
 }
 
 @layer utilities {
     .grid-container {
-        @apply px-5;
+        @apply px-5 tablet:px-10 notebook:max-w-[1246px] notebook:mx-auto;
     }
 }
 .swiper-pagination-bullet {
