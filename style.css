@@ -6,7 +6,7 @@
     .btn-primary,
     .btn-secondary,
     .btn-secondary-white {
-        @apply font-poppins text-[1rem] font-medium inline-block leading-[3rem] px-7 rounded-full;
+        @apply font-poppins text-[1rem] font-medium inline-block leading-[3rem] px-7 notebook:px-9 rounded-full;
     }
 
     .btn-primary {
