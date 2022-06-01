@@ -4,6 +4,7 @@ module.exports = {
     screens: {
       'mini-tablet': '610px',
       tablet: "768px",
+      landcape: "1024px",
       desktop: "1440px",
       full: "1920px",
     },
