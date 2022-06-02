@@ -5,27 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <title>Banco Neon</title>
+    <script>
+      window.addEventListener('scroll', function (e) {
+          var nav = document.getElementById('nav');
+          console.log(document.documentElement.scrollTop);
+          if (document.documentElement.scrollTop || document.body.scrollTop > window.innerHeight) {
+            nav.classList.add('nav-colored');
+            nav.classList.remove('nav-transparent');
+          } else {
+            nav.classList.add('nav-transparent');
+            nav.classList.remove('nav-colored');
+          }
+        });
+    </script>
   </head>
   <body class="font-inter overflow-x-hidden">
-    <header class="absolute top-0 left-0 w-full h-[4.5rem] tablet:h-[5.5rem] big-tablet:h-24 flex items-center border-b-2 border-white/20">
+    <header id="nav" class="z-10 fixed top-0 left-0 w-full h-[4.5rem] tablet:h-[5.5rem] big-tablet:h-24 flex items-center border-b-2 border-white/20 transition-colors duration-300">
       <div class="grid-container w-full flex items-center justify-between">
         <a href="#">
-          <img src="./img/logo-neon-white.svg" class="h-6 big-tablet:h-7  w-auto" alt="Logo Banco Neon">
+          <img src="./img/logo-neon-white.svg" class="h-6 big-tablet:h-7 w-auto logo-neon" alt="Logo Banco Neon">
         </a>
         <nav class="flex items-center space-x-10">
           <ul class="hidden notebook:flex items-center font-poppins text-title-16 font-medium text-white space-x-12">
-            <li><a class="hover:text-brand-yellow transition-colors duration-300" href="">Produtos</a></li>
+            <li class="relative group-ul">
+              <a class="group-ul-hover:text-brand-yellow transition-colors duration-300 flex items-center" href="">
+                Produtos
+                <svg class="stroke-gray-100 group-ul-hover:stroke-brand-yellow rotate-90 ml-3 w-[10px] h-[16px]" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L8 8L1 15" stroke-width="2" />
+                </svg>
+              </a>
+              <div class="hidden group-ul-hover:block opacity-0 group-ul-hover:opacity-100 transition-all duration-300 balao absolute left-[-70%] font-inter">
+                <ul class="space-y-7">
+                  <li class="group-li hover:cursor-pointer">
+                    <h2 class="font-light group-li-hover:text-brand-light-blue text-gray-400">Cartão de crédito</h2>
+                    <p class="text-paragraph-14 mt-1 text-gray-300  group-li-hover:border-b group-li-hover:border-brand-yellow/70 inline">Cartão de crédito sem anuidade</p>
+                  </li>
+                  <li class="group-li hover:cursor-pointer">
+                    <h2 class="font-light group-li-hover:text-brand-light-blue text-gray-400">Cartão pré-pago</h2>
+                    <p class="text-paragraph-14 mt-1 text-gray-300  group-li-hover:border-b group-li-hover:border-brand-yellow/70 inline">Cartão de débito internacional Neon</p>
+                  </li>
+                  <li class="group-li hover:cursor-pointer">
+                    <h2 class="font-light group-li-hover:text-brand-light-blue text-gray-400">Neon Mais</h2>
+                    <p class="text-paragraph-14 mt-1 text-gray-300  group-li-hover:border-b group-li-hover:border-brand-yellow/70 inline">4 saques grátis para quem compra com a Neon</p>
+                  </li>
+                  <li class="group-li hover:cursor-pointer">
+                    <h2 class="font-light group-li-hover:text-brand-light-blue text-gray-400">Investimentos</h2>
+                    <p class="text-paragraph-14 mt-1 text-gray-300  group-li-hover:border-b group-li-hover:border-brand-yellow/70 inline">A evolução da poupança</p>
+                  </li>
+                  <li class="group-li hover:cursor-pointer">
+                    <h2 class="font-light group-li-hover:text-brand-light-blue text-gray-400">Empréstimo pessoal</h2>
+                    <p class="text-paragraph-14 mt-1 text-gray-300  group-li-hover:border-b group-li-hover:border-brand-yellow/70 inline">Faça uma simulação de empréstimo pessoal</p>
+                  </li>
+                </ul>
+                <div class="h-[5px] mt-10 bg-brand-yellow rounded-t-full mr-6"></div>
+              </div>
+            </li>
             <li><a class="hover:text-brand-yellow transition-colors duration-300" href="">Conta digital</a></li>
             <li><a class="hover:text-brand-yellow transition-colors duration-300" href="">Quem somos</a></li>
             <li><a class="hover:text-brand-yellow transition-colors duration-300" href="">Blog</a></li>
             <li><a class="hover:text-brand-yellow transition-colors duration-300" href="">Ajuda</a></li>
           </ul>
           <a class="hidden tablet:block btn-secondary" href="">Abra sua conta digital</a>
-          <button class="big-tablet:hidden">
-            <img src="/img/btn-menu-mobile.svg" alt="Menu">
+          <button class="notebook:hidden">
+            <svg class="w-[31px] h-[26px] stroke-white btn-menu-mobile" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 2H29" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M2 13H29" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M10 24L29 24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </button>
         </nav>
       </div>
@@ -44,20 +93,20 @@
               notebook:text-left notebook:max-w-[682px] notebook:mb-10">A conta digital certa pra cuidar bem do seu dinheiro</h1>
             <a href="#" class="btn-primary">Abra sua conta digital</a>
             <ul class="mt-9 notebook:mt-14 space-y-4 mini-tablet:space-y-0 mini-tablet:flex items-start mini-tablet:justify-between mini-tablet:w-full mini-tablet:max-w-[588px]">
-              <li class="flex items-center space-x-5 mini-tablet:space-x-3">
-                <div class="w-5 h-auto flex mini-tablet:items-center justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
+              <li class="flex items-center space-x-5 mini-tablet:space-x-3 group-li cursor-default">
+                <div class="w-5 h-auto flex mini-tablet:items-center group-li-hover:scale-110 group-li-hover:-rotate-12 group-li-hover:shadow-card transition-transform duration-200 justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
                   <img src="/img/icon-card.svg" class="" alt="Ícone de Cartão de Crédito">
                 </div>
                 <span class="text-white text-paragraph-18 mini-tablet:text-paragraph-16 mini-tablet:max-w-[116px]">Cartão sem anuidade</span>
               </li>
-              <li class="flex items-center space-x-5 mini-tablet:space-x-3">
-                <div class="w-5 h-auto flex mini-tablet:items-center justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
+              <li class="flex items-center space-x-5 mini-tablet:space-x-3 group-li cursor-default">
+                <div class="w-5 h-auto flex mini-tablet:items-center group-li-hover:scale-110 group-li-hover:-rotate-12 group-li-hover:shadow-card transition-transform duration-200 justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
                   <img src="/img/icon-free.svg" class="" alt="Ícone de Taxa Zero">
                 </div>
                 <span class="text-white text-paragraph-18 mini-tablet:text-paragraph-16 mini-tablet:max-w-[116px]">Conta digital 100% grátis</span>
               </li>
-              <li class="flex items-center space-x-5 mini-tablet:space-x-3">
-                <div class="w-5 h-auto flex mini-tablet:items-center justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
+              <li class="flex items-center space-x-5 mini-tablet:space-x-3 group-li cursor-default">
+                <div class="w-5 h-auto flex mini-tablet:items-center group-li-hover:scale-110 group-li-hover:-rotate-12 group-li-hover:shadow-card transition-transform duration-200 justify-center mini-tablet:h-12 mini-tablet:w-12 mini-tablet:rounded-full mini-tablet:bg-gradient-to-b from-gradient-top to-gradient-bottom">
                   <img src="/img/icon-money.svg" class="" alt="Ícone de Cifrão">
                 </div>
                 <span class="text-white text-paragraph-18 mini-tablet:text-paragraph-16 mini-tablet:max-w-[116px]">Seu dinheiro rendendo mais</span>
@@ -84,8 +133,8 @@
             mini-tablet:text-title-36 mini-tablet:max-w-[424px] 
             big-tablet:text-title-40 big-tablet:font-bold big-tablet:mt-14 big-tablet:max-w-[488px] 
             big-tablet:text-left big-tablet:mx-0">Resolva sua vida direto pelo app Neon!</h2>
-          <ul class="mt-2 mx-auto tablet:max-w-[673px] big-tablet:max-w-full">
-            <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7">
+          <ul class="mt-2 mx-auto tablet:max-w-[673px] big-tablet:max-w-full group-ul">
+            <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7 hover:px-4 hover:rounded-xl transition-all duration-300 hover:shadow-card group-li group-ul-hover:border-white">
               <div class="flex items-start space-x-6">
                 <img src="/img/icon-free-card.svg" alt="Ícone de cartão de crédito sem anuidade">
                 <div class="space-y-2">
@@ -93,9 +142,13 @@
                   <p class="text-paragraph-14 text-gray-300">Conta digital com cartão de crédito sem anuidade e sem complicação</p>
                 </div>
               </div>
-              <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
+              <div class="w-[10px] h-[16px]">
+                <svg class="stroke-gray-100 group-li-hover:stroke-brand-green-light w-[10px] h-[16px]" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L8 8L1 15" stroke-width="2" />
+                </svg>
+              </div>
             </li>
-            <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7">
+            <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7 hover:px-4 hover:rounded-xl transition-all duration-300 hover:shadow-card group-li group-ul-hover:border-white">
               <div class="flex items-start space-x-6">
                 <img src="/img/icon-no-taxes.svg" alt="Ícone de cartão de crédito sem anuidade">
                 <div class="space-y-2">
@@ -103,9 +156,13 @@
                   <p class="text-paragraph-14 text-gray-300">Transferências, boletos de depósito e outros serviços gratuitos</p>
                 </div>
               </div>
-              <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
+              <div class="w-[10px] h-[16px]">
+                <svg class="stroke-gray-100 group-li-hover:stroke-brand-light-blue w-[10px] h-[16px]" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L8 8L1 15" stroke-width="2" />
+                </svg>
+              </div>
             </li>
-            <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7">
+            <li class="flex items-center justify-between space-x-6 border-b border-gray-100/90 py-7 hover:px-4 hover:rounded-xl transition-all duration-300 hover:shadow-card group-li group-ul-hover:border-white">
               <div class="flex items-start space-x-6">
                 <img src="/img/icon-invesments.svg" alt="Ícone de cartão de crédito sem anuidade">
                 <div class="space-y-2">
@@ -113,11 +170,15 @@
                   <p class="text-paragraph-14 text-gray-300">Rendem mais que a poupança e você resgata quando quiser</p>
                 </div>
               </div>
-              <img src="/img/arrow-right.svg" alt="Ícone de seta para a direita">
+              <div class="w-[10px] h-[16px]">
+                <svg class="stroke-gray-100 group-li-hover:stroke-brand-blue w-[10px] h-[16px]" width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L8 8L1 15" stroke-width="2" />
+                </svg>
+              </div>
             </li>
           </ul>
           <div class="flex justify-center big-tablet:justify-start mt-10">
-            <a href="#" class="font-poppins text-title-18 font-medium text-brand-blue inline-block after:content-[''] relative after:absolute after:bottom-0 after:-right-5 after:w-[10px] after:h-[3px] after:bg-brand-yellow">Conheça outros produtos</a>
+            <a href="#" class="font-poppins text-title-18 font-medium text-brand-blue hover:text-brand-yellow transition-colors duration-300 inline-block after:content-[''] relative after:absolute after:bottom-0 after:-right-5 after:w-[10px] after:h-[3px] after:bg-brand-yellow">Conheça outros produtos</a>
           </div>
 
           <!-- CARD PEJOTA -->
@@ -170,7 +231,9 @@
             <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@marciogurka</strong>
-                <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.2328 1.66303C16.5991 1.9364 15.9095 2.13314 15.1991 2.20977C15.9366 1.77162 16.4889 1.07942 16.7524 0.263026C16.0603 0.674719 15.3021 0.963406 14.5115 1.11628C14.1811 0.763021 13.7814 0.4816 13.3375 0.28955C12.8935 0.0975012 12.4148 -0.00105991 11.9311 8.5955e-06C9.97396 8.5955e-06 8.39999 1.5864 8.39999 3.53314C8.39999 3.80651 8.43313 4.07989 8.48698 4.34291C5.55651 4.18965 2.9429 2.78965 1.20532 0.646162C0.88872 1.18693 0.722809 1.80266 0.724851 2.4293C0.724851 3.65533 1.34822 4.7364 2.29881 5.37219C1.73862 5.35013 1.19154 5.19616 0.702071 4.92279V4.96628C0.702071 6.68314 1.91568 8.10592 3.53313 8.43314C3.22944 8.51202 2.91702 8.55238 2.60325 8.55326C2.37337 8.55326 2.15592 8.53048 1.93639 8.49941C2.38373 9.89941 3.68639 10.9163 5.23757 10.9494C4.02396 11.9 2.50384 12.4592 0.853254 12.4592C0.5571 12.4592 0.283728 12.4488 0 12.4157C1.56568 13.4201 3.42337 14 5.42396 14C11.9186 14 15.4725 8.61953 15.4725 3.94941C15.4725 3.79616 15.4725 3.64291 15.4621 3.48965C16.1497 2.9864 16.7524 2.36302 17.2328 1.66303Z" fill="#00A5F0"/>
+                </svg>
               </div>
               <p class="text-paragraph-18 text-gray-400">Valeu @banconeon! Linda embalagem e o cartão tbm é lindo! Muito amor por esse banco #bancoNeon</p>
             </div>
@@ -179,7 +242,9 @@
             <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@kleriene18</strong>
-                <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.2328 1.66303C16.5991 1.9364 15.9095 2.13314 15.1991 2.20977C15.9366 1.77162 16.4889 1.07942 16.7524 0.263026C16.0603 0.674719 15.3021 0.963406 14.5115 1.11628C14.1811 0.763021 13.7814 0.4816 13.3375 0.28955C12.8935 0.0975012 12.4148 -0.00105991 11.9311 8.5955e-06C9.97396 8.5955e-06 8.39999 1.5864 8.39999 3.53314C8.39999 3.80651 8.43313 4.07989 8.48698 4.34291C5.55651 4.18965 2.9429 2.78965 1.20532 0.646162C0.88872 1.18693 0.722809 1.80266 0.724851 2.4293C0.724851 3.65533 1.34822 4.7364 2.29881 5.37219C1.73862 5.35013 1.19154 5.19616 0.702071 4.92279V4.96628C0.702071 6.68314 1.91568 8.10592 3.53313 8.43314C3.22944 8.51202 2.91702 8.55238 2.60325 8.55326C2.37337 8.55326 2.15592 8.53048 1.93639 8.49941C2.38373 9.89941 3.68639 10.9163 5.23757 10.9494C4.02396 11.9 2.50384 12.4592 0.853254 12.4592C0.5571 12.4592 0.283728 12.4488 0 12.4157C1.56568 13.4201 3.42337 14 5.42396 14C11.9186 14 15.4725 8.61953 15.4725 3.94941C15.4725 3.79616 15.4725 3.64291 15.4621 3.48965C16.1497 2.9864 16.7524 2.36302 17.2328 1.66303Z" fill="#00A5F0"/>
+                </svg>
               </div>
               <p class="text-paragraph-18 text-gray-400">Eu uso o Neon pra render o pouquinho que eu tenho. Como disse minha amiga Bruna, um dia eu abro o app de novo e PA: tô rica.</p>
             </div>
@@ -188,7 +253,9 @@
             <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@mzltweet</strong>
-                <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.2328 1.66303C16.5991 1.9364 15.9095 2.13314 15.1991 2.20977C15.9366 1.77162 16.4889 1.07942 16.7524 0.263026C16.0603 0.674719 15.3021 0.963406 14.5115 1.11628C14.1811 0.763021 13.7814 0.4816 13.3375 0.28955C12.8935 0.0975012 12.4148 -0.00105991 11.9311 8.5955e-06C9.97396 8.5955e-06 8.39999 1.5864 8.39999 3.53314C8.39999 3.80651 8.43313 4.07989 8.48698 4.34291C5.55651 4.18965 2.9429 2.78965 1.20532 0.646162C0.88872 1.18693 0.722809 1.80266 0.724851 2.4293C0.724851 3.65533 1.34822 4.7364 2.29881 5.37219C1.73862 5.35013 1.19154 5.19616 0.702071 4.92279V4.96628C0.702071 6.68314 1.91568 8.10592 3.53313 8.43314C3.22944 8.51202 2.91702 8.55238 2.60325 8.55326C2.37337 8.55326 2.15592 8.53048 1.93639 8.49941C2.38373 9.89941 3.68639 10.9163 5.23757 10.9494C4.02396 11.9 2.50384 12.4592 0.853254 12.4592C0.5571 12.4592 0.283728 12.4488 0 12.4157C1.56568 13.4201 3.42337 14 5.42396 14C11.9186 14 15.4725 8.61953 15.4725 3.94941C15.4725 3.79616 15.4725 3.64291 15.4621 3.48965C16.1497 2.9864 16.7524 2.36302 17.2328 1.66303Z" fill="#00A5F0"/>
+                </svg>
               </div>
               <p class="text-paragraph-18 text-gray-400">Só por ter um cartão virtual com bloqueio fácil no app, já ganha e muito na segurançã pro cliente.</p>
             </div>
@@ -197,7 +264,9 @@
             <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@marciogurka</strong>
-                <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.2328 1.66303C16.5991 1.9364 15.9095 2.13314 15.1991 2.20977C15.9366 1.77162 16.4889 1.07942 16.7524 0.263026C16.0603 0.674719 15.3021 0.963406 14.5115 1.11628C14.1811 0.763021 13.7814 0.4816 13.3375 0.28955C12.8935 0.0975012 12.4148 -0.00105991 11.9311 8.5955e-06C9.97396 8.5955e-06 8.39999 1.5864 8.39999 3.53314C8.39999 3.80651 8.43313 4.07989 8.48698 4.34291C5.55651 4.18965 2.9429 2.78965 1.20532 0.646162C0.88872 1.18693 0.722809 1.80266 0.724851 2.4293C0.724851 3.65533 1.34822 4.7364 2.29881 5.37219C1.73862 5.35013 1.19154 5.19616 0.702071 4.92279V4.96628C0.702071 6.68314 1.91568 8.10592 3.53313 8.43314C3.22944 8.51202 2.91702 8.55238 2.60325 8.55326C2.37337 8.55326 2.15592 8.53048 1.93639 8.49941C2.38373 9.89941 3.68639 10.9163 5.23757 10.9494C4.02396 11.9 2.50384 12.4592 0.853254 12.4592C0.5571 12.4592 0.283728 12.4488 0 12.4157C1.56568 13.4201 3.42337 14 5.42396 14C11.9186 14 15.4725 8.61953 15.4725 3.94941C15.4725 3.79616 15.4725 3.64291 15.4621 3.48965C16.1497 2.9864 16.7524 2.36302 17.2328 1.66303Z" fill="#00A5F0"/>
+                </svg>
               </div>
               <p class="text-paragraph-18 text-gray-400">Valeu @banconeon! Linda embalagem e o cartão tbm é lindo! Muito amor por esse banco #bancoNeon</p>
             </div>
@@ -206,7 +275,9 @@
             <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@kleriene18</strong>
-                <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.2328 1.66303C16.5991 1.9364 15.9095 2.13314 15.1991 2.20977C15.9366 1.77162 16.4889 1.07942 16.7524 0.263026C16.0603 0.674719 15.3021 0.963406 14.5115 1.11628C14.1811 0.763021 13.7814 0.4816 13.3375 0.28955C12.8935 0.0975012 12.4148 -0.00105991 11.9311 8.5955e-06C9.97396 8.5955e-06 8.39999 1.5864 8.39999 3.53314C8.39999 3.80651 8.43313 4.07989 8.48698 4.34291C5.55651 4.18965 2.9429 2.78965 1.20532 0.646162C0.88872 1.18693 0.722809 1.80266 0.724851 2.4293C0.724851 3.65533 1.34822 4.7364 2.29881 5.37219C1.73862 5.35013 1.19154 5.19616 0.702071 4.92279V4.96628C0.702071 6.68314 1.91568 8.10592 3.53313 8.43314C3.22944 8.51202 2.91702 8.55238 2.60325 8.55326C2.37337 8.55326 2.15592 8.53048 1.93639 8.49941C2.38373 9.89941 3.68639 10.9163 5.23757 10.9494C4.02396 11.9 2.50384 12.4592 0.853254 12.4592C0.5571 12.4592 0.283728 12.4488 0 12.4157C1.56568 13.4201 3.42337 14 5.42396 14C11.9186 14 15.4725 8.61953 15.4725 3.94941C15.4725 3.79616 15.4725 3.64291 15.4621 3.48965C16.1497 2.9864 16.7524 2.36302 17.2328 1.66303Z" fill="#00A5F0"/>
+                </svg>
               </div>
               <p class="text-paragraph-18 text-gray-400">Eu uso o Neon pra render o pouquinho que eu tenho. Como disse minha amiga Bruna, um dia eu abro o app de novo e PA: tô rica.</p>
             </div>
@@ -215,7 +286,9 @@
             <div class="w-full min-w-[15.5rem] bg-gray-50 p-8 rounded-lg h-full">
               <div class="flex items-center justify-between mb-5">
                 <strong class="font-poppins font-semibold text-title-18 text-gray-500">@mzltweet</strong>
-                <img src="/img/twitter-logo.svg" alt="Logo do Twitter">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.2328 1.66303C16.5991 1.9364 15.9095 2.13314 15.1991 2.20977C15.9366 1.77162 16.4889 1.07942 16.7524 0.263026C16.0603 0.674719 15.3021 0.963406 14.5115 1.11628C14.1811 0.763021 13.7814 0.4816 13.3375 0.28955C12.8935 0.0975012 12.4148 -0.00105991 11.9311 8.5955e-06C9.97396 8.5955e-06 8.39999 1.5864 8.39999 3.53314C8.39999 3.80651 8.43313 4.07989 8.48698 4.34291C5.55651 4.18965 2.9429 2.78965 1.20532 0.646162C0.88872 1.18693 0.722809 1.80266 0.724851 2.4293C0.724851 3.65533 1.34822 4.7364 2.29881 5.37219C1.73862 5.35013 1.19154 5.19616 0.702071 4.92279V4.96628C0.702071 6.68314 1.91568 8.10592 3.53313 8.43314C3.22944 8.51202 2.91702 8.55238 2.60325 8.55326C2.37337 8.55326 2.15592 8.53048 1.93639 8.49941C2.38373 9.89941 3.68639 10.9163 5.23757 10.9494C4.02396 11.9 2.50384 12.4592 0.853254 12.4592C0.5571 12.4592 0.283728 12.4488 0 12.4157C1.56568 13.4201 3.42337 14 5.42396 14C11.9186 14 15.4725 8.61953 15.4725 3.94941C15.4725 3.79616 15.4725 3.64291 15.4621 3.48965C16.1497 2.9864 16.7524 2.36302 17.2328 1.66303Z" fill="#00A5F0"/>
+                </svg>
               </div>
               <p class="text-paragraph-18 text-gray-400">Só por ter um cartão virtual com bloqueio fácil no app, já ganha e muito na segurançã pro cliente.</p>
             </div>
@@ -262,7 +335,6 @@
         </div>
 
         <div class="w-full mx-auto mt-11 mini-tablet:mt-20 big-tablet:max-w-[556px]">
-          <!-- <div class="relative w-full max-w-[582px] mx-auto flex flex-col items-center justify-center bg-conta-digital"> -->
           <div class="relative w-full max-w-[582px] mx-auto flex flex-col items-center justify-center bg-conta-digital bg-no-repeat bg-contain bg-bottom big-tablet:bg-none">
             <div class="flex gap-4 big-tablet:min-w-[406px] big-tablet:relative overflow-x-visible">
               <img class="hidden big-tablet:block absolute left-[170px] notebook:left-[200px] top-[90px] -z-10" src="/img/circle-neon.svg" alt="">
@@ -282,11 +354,43 @@
             <div class="flex flex-col mini-tablet:flex-row items-center mini-tablet:items-end w-full mini-tablet:w-auto">
               <p class="text-paragraph-14 text-white/70 text-center mt-8 mb-5 mini-tablet:my-0 whitespace-nowrap mini-tablet:mr-8">Acompanhe nas redes</p>
               <ul class="flex items-center justify-between w-full max-w-[252px] mini-tablet:pb-0 mini-tablet:space-x-8">
-                <li><img src="/img/youtube.svg" alt="YouTube"></li>
-                <li><img src="/img/linkedin.svg" alt="LinkedIn"></li>
-                <li><img src="/img/facebook.svg" alt="Facebook"></li>
-                <li><img src="/img/instagram.svg" alt="Instagram"></li>
-                <li><img src="/img/twitter-white.svg" alt="Twitter"></li>
+                <li>
+                  <svg class="fill-current text-white hover:text-brand-yellow cursor-pointer" width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M28.3494 9.91382C28.3494 9.84611 28.3494 9.76916 28.3464 9.6799C28.3433 9.43059 28.3371 9.15051 28.331 8.85195C28.3064 7.99323 28.2633 7.13758 28.1956 6.33118C28.1032 5.22007 27.9678 4.29363 27.7831 3.59803C27.5882 2.87211 27.2062 2.21006 26.6753 1.67804C26.1444 1.14603 25.4831 0.762684 24.7576 0.566328C23.8865 0.33241 22.1814 0.18775 19.7807 0.0984917C18.6388 0.0554016 17.4168 0.0277006 16.1949 0.0123113C15.7671 0.00615555 15.3701 0.00307787 15.013 0H14.1081C13.7511 0.00307787 13.3541 0.00615555 12.9262 0.0123113C11.7043 0.0277006 10.4824 0.0554016 9.34052 0.0984917C6.93978 0.190828 5.23156 0.335488 4.3636 0.566328C3.63784 0.762202 2.97631 1.14538 2.4453 1.67747C1.91429 2.20957 1.53246 2.87187 1.33806 3.59803C1.15031 4.29363 1.01796 5.22007 0.925622 6.33118C0.857909 7.13758 0.814819 7.99323 0.790196 8.85195C0.780962 9.15051 0.777884 9.43059 0.774806 9.6799C0.774806 9.76916 0.771729 9.84611 0.771729 9.91382V10.0862C0.771729 10.1539 0.771728 10.2308 0.774806 10.3201C0.777884 10.5694 0.78404 10.8495 0.790196 11.148C0.814819 12.0068 0.857909 12.8624 0.925622 13.6688C1.01796 14.7799 1.15338 15.7064 1.33806 16.402C1.73202 17.8763 2.8893 19.0397 4.3636 19.4337C5.23156 19.6676 6.93978 19.8122 9.34052 19.9015C10.4824 19.9446 11.7043 19.9723 12.9262 19.9877C13.3541 19.9938 13.7511 19.9969 14.1081 20H15.013C15.3701 19.9969 15.7671 19.9938 16.1949 19.9877C17.4168 19.9723 18.6388 19.9446 19.7807 19.9015C22.1814 19.8092 23.8896 19.6645 24.7576 19.4337C26.2319 19.0397 27.3891 17.8793 27.7831 16.402C27.9709 15.7064 28.1032 14.7799 28.1956 13.6688C28.2633 12.8624 28.3064 12.0068 28.331 11.148C28.3402 10.8495 28.3433 10.5694 28.3464 10.3201C28.3464 10.2308 28.3494 10.1539 28.3494 10.0862V9.91382ZM26.1334 10.0739C26.1334 10.1385 26.1334 10.2093 26.1303 10.2924C26.1272 10.5325 26.1211 10.7972 26.1149 11.0834C26.0934 11.9021 26.0503 12.7208 25.9856 13.4811C25.9025 14.4721 25.7856 15.2847 25.6409 15.8295C25.4501 16.5405 24.8899 17.1037 24.182 17.2915C23.5357 17.4638 21.9075 17.6023 19.6945 17.6854C18.5741 17.7285 17.3676 17.7562 16.1642 17.7716C15.7425 17.7778 15.3516 17.7809 15.0007 17.7809H14.1205L12.957 17.7716C11.7536 17.7562 10.5501 17.7285 9.4267 17.6854C7.21371 17.5993 5.58244 17.4638 4.93916 17.2915C4.23125 17.1006 3.67108 16.5405 3.48025 15.8295C3.33559 15.2847 3.21864 14.4721 3.13553 13.4811C3.0709 12.7208 3.03089 11.9021 3.00626 11.0834C2.99703 10.7972 2.99395 10.5294 2.99087 10.2924C2.99087 10.2093 2.98779 10.1354 2.98779 10.0739V9.92613C2.98779 9.8615 2.9878 9.7907 2.99087 9.7076C2.99395 9.46753 3.00011 9.20283 3.00626 8.91659C3.02781 8.09787 3.0709 7.27916 3.13553 6.51893C3.21864 5.52785 3.33559 4.7153 3.48025 4.17051C3.67108 3.45953 4.23125 2.89628 4.93916 2.70853C5.58552 2.53616 7.21371 2.39766 9.4267 2.31456C10.547 2.27147 11.7536 2.24377 12.957 2.22838C13.3787 2.22222 13.7696 2.21914 14.1205 2.21914H15.0007L16.1642 2.22838C17.3676 2.24377 18.5711 2.27147 19.6945 2.31456C21.9075 2.40074 23.5387 2.53616 24.182 2.70853C24.8899 2.89935 25.4501 3.45953 25.6409 4.17051C25.7856 4.7153 25.9025 5.52785 25.9856 6.51893C26.0503 7.27916 26.0903 8.09787 26.1149 8.91659C26.1241 9.20283 26.1272 9.47061 26.1303 9.7076C26.1303 9.7907 26.1334 9.86457 26.1334 9.92613V10.0739ZM11.8213 14.1243L18.9619 9.96922L11.8213 5.87565V14.1243Z"
+                       />
+                  </svg>
+                </li>
+                <li>
+                  <svg class="fill-current text-white hover:text-brand-yellow cursor-pointer" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1.22458 20H4.97458V6.125H1.22458V20ZM3.09958 0C1.84958 0 0.849579 1 0.849579 2.25C0.849579 3.5 1.84958 4.5 3.09958 4.5C4.34958 4.5 5.34958 3.5 5.34958 2.25C5.34958 1 4.34958 0 3.09958 0ZM11.3496 8.25V6.125H7.59958V20H11.3496V12.875C11.3496 8.875 16.4746 8.625 16.4746 12.875V20H20.2246V11.5C20.2246 4.75 13.0996 5 11.3496 8.25Z"
+                       />
+                  </svg>
+
+                </li>
+                <li>
+                  <svg class="fill-current text-white hover:text-brand-yellow cursor-pointer" width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.734 11.2494L11.2896 7.63H7.81645V5.28125C7.81645 4.29125 8.30145 3.32562 9.85708 3.32562H11.4358V0.244375C11.4358 0.244375 10.0033 0 8.63333 0C5.77333 0 3.90395 1.73375 3.90395 4.87187V7.63062H0.724579V11.25H3.90395V20H7.81645V11.25L10.734 11.2494Z"
+                       />
+                  </svg>
+                </li>
+                <li>
+                  <svg class="fill-current text-white hover:text-brand-yellow cursor-pointer" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.9358 0C8.21733 0 7.87853 0.0131266 6.81465 0.0581323C5.74639 0.110639 5.0238 0.276285 4.38622 0.523815C3.71893 0.775735 3.1146 1.17016 2.61538 1.67958C2.10453 2.17765 1.70989 2.78231 1.45961 3.45043C1.21208 4.08801 1.04643 4.8106 0.993923 5.87886C0.945792 6.94337 0.935791 7.28154 0.935791 10C0.935791 12.7185 0.948918 13.0573 0.993923 14.1211C1.04643 15.1863 1.21208 15.912 1.45961 16.5496C1.71153 17.2169 2.10595 17.8212 2.61538 18.3204C3.11344 18.8313 3.7181 19.2259 4.38622 19.4762C5.0238 19.7206 5.74952 19.8894 6.81465 19.9419C7.87916 19.99 8.21733 20 10.9358 20C13.6543 20 13.993 19.9869 15.0569 19.9419C16.1221 19.8894 16.8478 19.72 17.4854 19.4762C18.1527 19.2243 18.757 18.8298 19.2562 18.3204C19.7677 17.8229 20.1625 17.2181 20.412 16.5496C20.6564 15.912 20.8251 15.1863 20.8777 14.1211C20.9258 13.0566 20.9358 12.7185 20.9358 10C20.9358 7.28154 20.9227 6.94274 20.8777 5.87886C20.8251 4.81373 20.6558 4.08426 20.412 3.45043C20.1601 2.78314 19.7656 2.17881 19.2562 1.67958C18.7587 1.16808 18.1539 0.773334 17.4854 0.523815C16.8478 0.276285 16.1221 0.110639 15.0569 0.0581323C13.9924 0.0100013 13.6543 0 10.9358 0ZM10.9358 1.80023C13.6055 1.80023 13.9243 1.81335 14.9794 1.85836C15.9527 1.90399 16.4827 2.06651 16.8347 2.20403C17.2697 2.36462 17.6635 2.62023 17.9873 2.95224C18.3187 3.27468 18.5734 3.66755 18.7324 4.10176C18.8699 4.45368 19.0324 4.98375 19.0781 5.95699C19.1231 7.01213 19.1362 7.33154 19.1362 10.0006C19.1362 12.6697 19.1231 12.9891 19.0743 14.0443C19.0218 15.0175 18.8593 15.5476 18.7224 15.8995C18.533 16.3689 18.3217 16.6971 17.9729 17.0521C17.648 17.3821 17.2545 17.6364 16.8203 17.7972C16.4727 17.9347 15.9352 18.0973 14.9582 18.1429C13.8974 18.1879 13.5849 18.201 10.9083 18.201C8.2317 18.201 7.91979 18.1879 6.85778 18.1391C5.88453 18.0866 5.34759 17.9241 4.99567 17.7872C4.52061 17.5978 4.19495 17.3865 3.84615 17.0378C3.49424 16.6858 3.27046 16.3508 3.09794 15.8851C2.95792 15.5376 2.7979 15 2.74602 14.023C2.71039 12.9747 2.69351 12.6497 2.69351 9.98562C2.69351 7.32279 2.71039 6.99712 2.74602 5.93574C2.7979 4.95875 2.95792 4.42243 3.09794 4.07363C3.27046 3.59795 3.49486 3.27291 3.84615 2.92099C4.19432 2.57282 4.52061 2.34779 4.99567 2.17152C5.34759 2.03463 5.87141 1.87211 6.8484 1.82335C7.90916 1.78522 8.2217 1.77147 10.8945 1.77147L10.9358 1.80023ZM10.9358 4.86748C10.2615 4.86724 9.59386 4.99986 8.97089 5.25777C8.34792 5.51567 7.78188 5.89382 7.30512 6.37058C6.82836 6.84734 6.45022 7.41338 6.19231 8.03635C5.9344 8.65932 5.80178 9.32701 5.80202 10.0013C5.80178 10.6755 5.9344 11.3432 6.19231 11.9661C6.45022 12.5891 6.82836 13.1552 7.30512 13.6319C7.78188 14.1087 8.34792 14.4868 8.97089 14.7447C9.59386 15.0026 10.2615 15.1353 10.9358 15.135C11.61 15.1353 12.2777 15.0026 12.9007 14.7447C13.5237 14.4868 14.0897 14.1087 14.5665 13.6319C15.0432 13.1552 15.4214 12.5891 15.6793 11.9661C15.9372 11.3432 16.0698 10.6755 16.0696 10.0013C16.0698 9.32701 15.9372 8.65932 15.6793 8.03635C15.4214 7.41338 15.0432 6.84734 14.5665 6.37058C14.0897 5.89382 13.5237 5.51567 12.9007 5.25777C12.2777 4.99986 11.61 4.86724 10.9358 4.86748ZM10.9358 13.3348C9.09306 13.3348 7.60225 11.844 7.60225 10.0013C7.60225 8.15852 9.09306 6.66771 10.9358 6.66771C12.7785 6.66771 14.2693 8.15852 14.2693 10.0013C14.2693 11.844 12.7785 13.3348 10.9358 13.3348ZM17.4766 4.66246C17.4763 4.98104 17.3495 5.28646 17.1241 5.51161C16.8987 5.73676 16.5932 5.86323 16.2746 5.86323C16.1171 5.86323 15.9611 5.83221 15.8155 5.77192C15.67 5.71164 15.5378 5.62329 15.4264 5.5119C15.315 5.40051 15.2266 5.26828 15.1664 5.12275C15.1061 4.97721 15.0751 4.82123 15.0751 4.66371C15.0751 4.50618 15.1061 4.3502 15.1664 4.20467C15.2266 4.05914 15.315 3.9269 15.4264 3.81552C15.5378 3.70413 15.67 3.61577 15.8155 3.55549C15.9611 3.49521 16.1171 3.46418 16.2746 3.46418C16.9353 3.46418 17.4766 4.00175 17.4766 4.66246Z"
+                       />
+                  </svg>
+                </li>
+                <li>
+                  <svg class="fill-current text-white hover:text-brand-yellow cursor-pointer" width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M25.0541 2.37575C24.1488 2.76628 23.1636 3.04735 22.1488 3.15682C23.2024 2.53089 23.9914 1.54202 24.3677 0.375752C23.3791 0.963885 22.296 1.37629 21.1665 1.59469C20.6945 1.09003 20.1236 0.687999 19.4893 0.413643C18.8551 0.139287 18.1712 -0.00151415 17.4802 1.22793e-05C14.6843 1.22793e-05 12.4358 2.26628 12.4358 5.04735C12.4358 5.43788 12.4831 5.82841 12.56 6.20415C8.37366 5.98522 4.63993 3.98522 2.15768 0.923089C1.70539 1.69562 1.46838 2.57524 1.47129 3.47042C1.47129 5.2219 2.36183 6.76628 3.71981 7.67456C2.91953 7.64305 2.13799 7.42308 1.43875 7.03255V7.09468C1.43875 9.54734 3.17248 11.5799 5.48313 12.0473C5.04928 12.16 4.60297 12.2177 4.15472 12.2189C3.82632 12.2189 3.51567 12.1864 3.20206 12.142C3.84111 14.142 5.70206 15.5947 7.91804 15.642C6.18431 17 4.01271 17.7988 1.65473 17.7988C1.23165 17.7988 0.841116 17.784 0.435791 17.7367C2.67248 19.1716 5.32632 20 8.18431 20C17.4624 20 22.5393 12.3136 22.5393 5.64202C22.5393 5.42309 22.5393 5.20415 22.5245 4.98522C23.5068 4.26628 24.3677 3.37575 25.0541 2.37575Z"
+                       />
+                  </svg>
+
+                </li>
               </ul>
             </div>
           </div>
@@ -295,57 +399,62 @@
               <div>
                 <h2 class="font-poppins font-semibold text-title-18 text-white mb-5">Produtos Neon</h2>
                 <ul class="space-y-7">
-                  <li><a href="" class="text-white/70">Cartão de crédito</a></li>
-                  <li><a href="" class="text-white/70">Cartão pré-pago</a></li>
-                  <li><a href="" class="text-white/70">Neon Mais</a></li>
-                  <li><a href="" class="text-white/70">Investimentos</a></li>
-                  <li><a href="" class="text-white/70">Empréstimos</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Cartão de crédito</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Cartão pré-pago</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Neon Mais</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Investimentos</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Empréstimos</a></li>
                 </ul>
               </div>
               <div>
                 <h2 class="font-poppins font-semibold text-title-18 text-white mb-5">Conta digital PJ</h2>
                 <ul class="space-y-7">
-                  <li><a href="" class="text-white/70">Sou MEI</a></li>
-                  <li><a href="" class="text-white/70">Sou ME</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Sou MEI</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Sou ME</a></li>
                 </ul>
               </div>
               <div>
                 <h2 class="font-poppins font-semibold text-title-18 text-white mb-5">Blog</h2>
                 <ul class="space-y-7">
-                  <li><a href="" class="text-white/70">#focanodinheiro</a></li>
-                  <li><a href="" class="text-white/70">O poder da comunidade</a></li>
-                  <li><a href="" class="text-white/70">Desafio das 52 semanas</a></li>
-                  <li><a href="" class="text-white/70">Planilha de gastos</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">#focanodinheiro</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">O poder da comunidade</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Desafio das 52 semanas</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Planilha de gastos</a></li>
                 </ul>
               </div>
               <div>
                 <h2 class="font-poppins font-semibold text-title-18 text-white mb-5">Institucional</h2>
                 <ul class="space-y-7">
-                  <li><a href="" class="text-white/70">Conheça a Neon</a></li>
-                  <li><a href="" class="text-white/70">Trabalhe conosco</a></li>
-                  <li><a href="" class="text-white/70">Termos de uso</a></li>
-                  <li><a href="" class="text-white/70">Políticas de privacidade</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Conheça a Neon</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Trabalhe conosco</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Termos de uso</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Políticas de privacidade</a></li>
                 </ul>
               </div>
               <div>
                 <h2 class="font-poppins font-semibold text-title-18 text-white mb-5">Ajuda</h2>
                 <ul class="space-y-7">
-                  <li><a href="" class="text-white/70">Ouvidoria</a></li>
-                  <li><a href="" class="text-white/70">Fale conosco</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Ouvidoria</a></li>
+                  <li><a href="" class="text-white/70 hover:text-white/100">Fale conosco</a></li>
                 </ul>
               </div>
             </nav>
             <!-- CONTATOS -->
             <div class="mt-9 big-tablet:mt-13 big-tablet:ml-4 space-y-6 mini-tablet:absolute big-tablet:relative mini-tablet:bottom-[150px] right-0 big-tablet:right-auto big-tablet:bottom-auto w-full mini-tablet:max-w-[240px] tablet:max-w-[280px] big-tablet:max-w-[240px] notebook:max-w-[280px]">
-              <address class="not-italic font-poppins font-semibold text-paragraph-14 text-center mini-tablet:text-left text-white bg-brand-light-blue/20 rounded-md tablet:flex py-4 px-16 mini-tablet:px-8 tablet:px-0 big-tablet:px-8 notebook:px-0 whitespace-nowrap">
-                <img src="/img/envelope.svg" class="hidden tablet:block big-tablet:hidden notebook:block mx-6" alt="">
+              <address class="not-italic font-poppins font-semibold text-paragraph-14 text-center mini-tablet:text-left text-white bg-brand-light-blue/20 rounded-md tablet:flex tablet:items-center py-4 px-16 mini-tablet:px-8 tablet:px-0 big-tablet:px-8 notebook:px-0 whitespace-nowrap">
+                <svg class="hidden tablet:block big-tablet:hidden notebook:block mx-6" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 1H19C20.1 1 21 1.9 21 3V15C21 16.1 20.1 17 19 17H3C1.9 17 1 16.1 1 15V3C1 1.9 1.9 1 3 1Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path opacity="0.5" d="M21 3L11 10L1 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <div>
                   Atendimento:
                   <a class="block font-inter font-normal" href="">oi@neon.com.br (24 horas)</a>
                 </div>
               </address>
-              <address class="not-italic font-poppins font-semibold text-paragraph-14 text-center mini-tablet:text-left text-white bg-brand-light-blue/20 rounded-md tablet:flex py-4 px-16 mini-tablet:px-8 tablet:px-0 big-tablet:px-8 notebook:px-0 whitespace-nowrap">
-                <img src="/img/chat.svg" class="hidden tablet:block big-tablet:hidden notebook:block mx-6" alt="">
+              <address class="not-italic font-poppins font-semibold text-paragraph-14 text-center mini-tablet:text-left text-white bg-brand-light-blue/20 rounded-md tablet:flex tablet:items-center py-4 px-16 mini-tablet:px-8 tablet:px-0 big-tablet:px-8 notebook:px-0 whitespace-nowrap">
+                <svg class="hidden tablet:block big-tablet:hidden notebook:block mx-6" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 13C19 13.5304 18.7893 14.0391 18.4142 14.4142C18.0391 14.7893 17.5304 15 17 15H5L1 19V3C1 2.46957 1.21071 1.96086 1.58579 1.58579C1.96086 1.21071 2.46957 1 3 1H17C17.5304 1 18.0391 1.21071 18.4142 1.58579C18.7893 1.96086 19 2.46957 19 3V13Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <div>
                   Imprensa:
                   <a class="block font-inter font-normal" href="">imprensa@neon.com.br</a>

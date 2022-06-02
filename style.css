@@ -13,21 +13,28 @@
         @apply text-[#855B35] bg-brand-yellow hover:bg-[#FFDC5C] transition-colors duration-300;
     }
 
+    .nav-colored .btn-secondary {
+        @apply text-brand-light-blue border border-brand-light-blue bg-transparent hover:bg-brand-light-blue hover:text-white transition-colors duration-300;
+    }
+
     .btn-secondary {
         @apply text-white border border-white bg-transparent hover:bg-white hover:text-brand-green-light transition-colors duration-300;
     }
+
+    .nav-colored .logo-neon {
+        content: url("/img/logo-neon-color.svg");
+    }
+
+    .nav-colored .btn-menu-mobile {
+        @apply stroke-brand-light-blue;
+    }
     
     .s-hero {
-        background-image: url(/img/bg-hero-mobile.svg);
-    }
-    @media(min-width: 768px){
-        .s-hero {
-            background-image: url(/img/bg-hero-tablet.svg);
-        }
+        background-image: url(/img/bg-hero.svg);
     }
 
     .s-card-pejota {
-        background-image: url(/img/bg-neon-pj-mobile.svg);
+        background-image: url(/img/bg-neon-pj.svg);
     }
 
     .bg-conta-digital {
@@ -37,6 +44,43 @@
     .icon-dots:before {
         background: url('/img/dots.svg') no-repeat center;
     }
+
+    .nav-colored {
+        background-color: #fff !important;
+        
+    }
+    .nav-colored ul {
+        color: #5F5C6B;
+    }
+
+    .nav-transparent {
+        background-color: transparent !important;
+    }
+
+        .balao {
+            @apply bg-white text-gray-400 mx-auto rounded-md shadow-popup;
+            width: 393px;
+            height: auto;
+            padding: 43px 10px 0 43px;
+            position: relative;
+            margin-top: 10px;
+        }
+    
+        .balao:after {
+            /*Triangulo*/
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+            /*Aqui entra a cor da "aba" do balão */
+            border-bottom: 10px solid #fff;
+            top: -10px;
+            /*localização. Experimente alterar para 'bottom'*/
+            left: 17%;
+        }
 }
 
 @layer utilities {

@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   content: ["./index.html"],
   theme: {
@@ -52,12 +54,26 @@ module.exports = {
       "paragraph-16": ["1rem", { lineHeight: "150%", letterSpacing: "0px" }],
       "paragraph-14": ["0.875rem", { lineHeight: "150%", letterSpacing: "0px" }],
     },
-
+    boxShadow: {
+      'card': '0px 10px 20px rgba(78, 75, 89, 0.1)',
+      'popup': '0px 0px 20px rgba(78, 75, 89, 0.1)'
+    },
+    groups: ['base', 'ul', 'li'],
     extend: {
       spacing: {
         '13': '3.25rem',
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addVariant, theme }) => {
+      const groups = theme('groups') || []
+
+      groups.forEach((group) => {
+        addVariant(`group-${group}-hover`, () => {
+          return `:merge(.group-${group}):hover &`
+        })
+      })
+    })
+  ]
 };
