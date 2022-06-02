@@ -32,9 +32,6 @@
 
     .bg-conta-digital {
         background-image: url(/img/circle-neon-mobile.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom;
     }
 
     .icon-dots:before {
