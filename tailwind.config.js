@@ -62,6 +62,16 @@ module.exports = {
     extend: {
       spacing: {
         '13': '3.25rem',
+      },
+      keyframes: {
+        floating: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '66%': { transform: 'translateY(-15px)' },
+        }
+      },
+      animation: {
+        floating: 'floating 6s infinite',
+        'floating-long': 'floating 8s infinite',
       }
     },
   },
