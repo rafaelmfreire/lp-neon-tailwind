@@ -57,30 +57,29 @@
         background: url('/img/dots.svg') no-repeat center;
     }
 
-        .balao {
-            @apply bg-white text-gray-400 mx-auto rounded-md shadow-popup;
-            width: 393px;
-            height: auto;
-            padding: 43px 10px 0 43px;
-            position: relative;
-            margin-top: 10px;
-        }
-    
-        .balao:after {
-            /*Triangulo*/
-            content: "";
-            width: 0;
-            height: 0;
-            position: absolute;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
-            /*Aqui entra a cor da "aba" do balão */
-            border-bottom: 10px solid #fff;
-            top: -10px;
-            /*localização. Experimente alterar para 'bottom'*/
-            left: 17%;
-        }
+    .balao {
+        @apply bg-white text-gray-400 mx-auto rounded-md shadow-popup;
+        width: 393px;
+        height: auto;
+        padding: 43px 10px 0 43px;
+        position: relative;
+    }
+
+    .balao:after {
+        /*Triangulo*/
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+        /*Aqui entra a cor da "aba" do balão */
+        border-bottom: 10px solid #fff;
+        top: -10px;
+        /*localização. Experimente alterar para 'bottom'*/
+        left: 17%;
+    }
 }
 
 @layer utilities {
