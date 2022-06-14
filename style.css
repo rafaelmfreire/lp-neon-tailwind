@@ -28,6 +28,18 @@
     .nav-colored .btn-menu-mobile {
         @apply stroke-brand-light-blue;
     }
+
+    .nav-colored {
+        background-color: #fff !important;
+    }
+
+    .nav-colored ul {
+        color: #5F5C6B;
+    }
+
+    .nav-transparent {
+        background-color: transparent;
+    }
     
     .s-hero {
         background-image: url(/img/bg-hero.svg);
@@ -43,18 +55,6 @@
 
     .icon-dots:before {
         background: url('/img/dots.svg') no-repeat center;
-    }
-
-    .nav-colored {
-        background-color: #fff !important;
-        
-    }
-    .nav-colored ul {
-        color: #5F5C6B;
-    }
-
-    .nav-transparent {
-        background-color: transparent !important;
     }
 
         .balao {
